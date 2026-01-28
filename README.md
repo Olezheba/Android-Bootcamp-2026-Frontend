@@ -1,5 +1,7 @@
 # Inverse
 
+**Ссылка на макет интерфейса в Figma** https://www.figma.com/design/G4EZx6OJ6ZPG1pzpdXuWzY/Android-Bootcamp-2026?node-id=0-1&t=uhuGDWoGF7BGwXr9-1
+
 # Техническое задание на разработку программного продукта для планирования встреч
 
 ## 1. Общие описание
