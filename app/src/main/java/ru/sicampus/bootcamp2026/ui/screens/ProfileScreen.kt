@@ -72,7 +72,6 @@ fun ProfileScreen(){
                     modifier = Modifier
                         .size(144.dp)
                         .clip(CircleShape)
-
                 )
             }
         }

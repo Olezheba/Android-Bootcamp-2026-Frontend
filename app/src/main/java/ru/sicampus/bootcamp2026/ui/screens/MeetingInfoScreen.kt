@@ -33,6 +33,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ru.sicampus.bootcamp2026.R
+import ru.sicampus.bootcamp2026.ui.components.UserList
 import ru.sicampus.bootcamp2026.ui.theme.AndroidBootcamp2026FrontendTheme
 import ru.sicampus.bootcamp2026.ui.theme.Surface
 import ru.sicampus.bootcamp2026.ui.theme.Typography
@@ -94,6 +95,18 @@ fun MeetingInfoScreen() {
                         text = "Список участников",
                         style = Typography.labelSmall,
                         modifier = Modifier.paddingFromBaseline(top = 30.dp, bottom = 5.dp)
+                    )
+                    UserList(
+                        fios = listOf("Иванов Иван Иванович", "Иванов Иван Иванович",
+                            "Иванов Иван Иванович", "Иванов Иван Иванович", "Иванов Иван Иванович"),
+                        positions = listOf(
+                            "Должность сотрудника",
+                            "Должность сотрудника",
+                            "Должность сотрудника",
+                            "Должность сотрудника",
+                            "Должность сотрудника"
+                        ),
+                        isOrganizers = listOf(true, false, false, false, false) // тоже 5 элементов
                     )
                 }
             }

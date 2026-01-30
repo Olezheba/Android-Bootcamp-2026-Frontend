@@ -100,23 +100,10 @@ fun CreateNewMeetingScreen() {
                 Button(
                     onClick = {},
                     shape = RoundedCornerShape(6.dp),
-                    modifier = Modifier.weight(1f).padding(start = 40.dp, end = 12.dp)
-                        .fillMaxWidth(),
+                    modifier = Modifier.weight(1f).fillMaxWidth(),
                 ){
                     Text(
                         "Принять"
-                    )
-                }
-                OutlinedButton(
-                    onClick = {},
-                    shape = RoundedCornerShape(6.dp),
-                    modifier = Modifier.weight(1f).padding(start = 12.dp, end = 40.dp)
-                        .fillMaxWidth(),
-                    border = BorderStroke(2.dp, Blue)
-                ){
-                    Text(
-                        "Отклонить",
-                        color = Blue
                     )
                 }
             }
