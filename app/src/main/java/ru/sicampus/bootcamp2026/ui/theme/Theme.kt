@@ -12,25 +12,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+    primary = Blue,
+    onPrimary = InverseSurface,
+    secondary = DeepBlue,
+    tertiary = OpDeepBlue,
+    surfaceContainerLow = InverseSurface,
+    background = DarkBlue,
+
+    )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = Blue,
+    onPrimary = Surface,
+    secondary = DeepBlue,
+    tertiary = OpDeepBlue,
+    surfaceContainerHigh = Surface,
+    background = LightBlue,
 )
 
 @Composable
@@ -51,7 +48,7 @@ fun AndroidBootcamp2026FrontendTheme(
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = LightColorScheme,
         typography = Typography,
         content = content
     )
