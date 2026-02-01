@@ -54,6 +54,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable chevron_forward
 drawable close
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -63,6 +64,8 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable invitation_wave1
+drawable invitation_wave2
 drawable meeting_wave1
 drawable meeting_wave2
 drawable notification_action_background
