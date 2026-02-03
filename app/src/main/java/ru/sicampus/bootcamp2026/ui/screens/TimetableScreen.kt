@@ -18,9 +18,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ru.sicampus.bootcamp2026.ui.components.MonthView
 import ru.sicampus.bootcamp2026.ui.components.WeekView
+import ru.sicampus.bootcamp2026.ui.theme.AndroidBootcamp2026FrontendTheme
 
 @RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -35,7 +37,7 @@ fun TimetableScreen() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             SingleChoiceSegmentedButtonRow(
-                modifier = Modifier.padding(50.dp)
+                modifier = Modifier.padding(horizontal = 50.dp, vertical = 20.dp)
             ) {
                 options.forEachIndexed { index, label ->
                     SegmentedButton(
@@ -55,5 +57,14 @@ fun TimetableScreen() {
                 1 -> MonthView()
             }
         }
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.O)
+@Preview
+@Composable
+fun TimetableScreenPreview() {
+    AndroidBootcamp2026FrontendTheme() {
+        TimetableScreen()
     }
 }

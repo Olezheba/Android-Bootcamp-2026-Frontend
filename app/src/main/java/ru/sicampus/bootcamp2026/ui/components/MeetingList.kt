@@ -10,10 +10,8 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -30,7 +28,7 @@ fun MeetingListItem(
     dateAndTime: String
 ) {
     Row(
-        modifier = Modifier.padding(12.dp).fillMaxWidth(),
+        modifier = Modifier.padding(horizontal = 12.dp, vertical = 20.dp).fillMaxWidth(),
     ) {
         Column(
             modifier = Modifier.padding(start = 6.dp)
@@ -56,7 +54,6 @@ fun MeetingListItem(
             )
         }
     }
-    HorizontalDivider(thickness = 2.dp, modifier = Modifier.padding(bottom = 4.dp))
 }
 
 @Composable
@@ -68,7 +65,7 @@ fun MeetingList(
     LazyColumn(modifier = modifier) {
         itemsIndexed(meetingNames) { index, meetingName ->
             Card(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp, horizontal = 20.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = DeepBlue,
                 ),

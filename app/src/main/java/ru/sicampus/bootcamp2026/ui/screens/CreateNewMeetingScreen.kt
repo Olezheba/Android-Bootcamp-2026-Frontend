@@ -6,7 +6,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -58,12 +60,14 @@ fun CreateNewMeetingScreen() {
                     Column(
                         modifier = Modifier.padding(40.dp).fillMaxWidth(),
                     ) {
+                        Spacer(modifier = Modifier.height(120.dp))
+
                         MeetingFields("Название", "Название встречи")
                         MeetingFields("Описание", "Очень длинное описание предстоящей встречи, которое придумал " +
                                 "сотрудник, чтобы все поняли, для чего она нужна")
-                        MeetingFields("Дата и время", "08.02.2026   18:00-19:00")
                         MeetingFields("Место", "Место встречи")
-                        MeetingFields("Название", "Название встречи")
+                        MeetingFields("Дата", "08.02.2026")
+                        MeetingFields("Время", "18:00-19:00")
                         Text(
                             text = "Список участников",
                             style = Typography.labelSmall,
@@ -95,7 +99,7 @@ fun CreateNewMeetingScreen() {
                 }
             }
             Row(
-                modifier = Modifier.fillMaxWidth().padding(top = 30.dp),
+                modifier = Modifier.fillMaxWidth().padding(30.dp),
             ) {
                 Button(
                     onClick = {},
@@ -103,7 +107,7 @@ fun CreateNewMeetingScreen() {
                     modifier = Modifier.weight(1f).fillMaxWidth(),
                 ){
                     Text(
-                        "Принять"
+                        "Создать"
                     )
                 }
             }
@@ -120,6 +124,7 @@ fun MeetingFields(
     var text by remember { mutableStateOf(value) }
     if (label=="Описание")
         OutlinedTextField(
+            modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
             value = text,
             textStyle = Typography.labelSmall,
             onValueChange = { text = it },
@@ -127,6 +132,7 @@ fun MeetingFields(
         )
     else
         OutlinedTextField(
+            modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
             value = text,
             textStyle = Typography.labelSmall,
             onValueChange = { text = it },
@@ -139,6 +145,6 @@ fun MeetingFields(
 @Composable
 fun PreviewCreateNewMeetingScreen() {
     AndroidBootcamp2026FrontendTheme() {
-        MeetingResponseScreen()
+        CreateNewMeetingScreen()
     }
 }
