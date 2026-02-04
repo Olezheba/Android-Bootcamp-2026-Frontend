@@ -11,12 +11,17 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
@@ -44,6 +49,17 @@ import ru.sicampus.bootcamp2026.ui.theme.Typography
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun CreateNewMeetingScreen() {
+    var expanded by remember { mutableStateOf(false) }
+    val timeConstantList = listOf("9:00-10:00",
+        "10:00-11:00",
+        "11:00-12:00",
+        "12:00-13:00",
+        "13:00-14:00",
+        "14:00-15:00",
+        "15:00-16:00",
+        "16:00-17:00",
+        "17:00-18:00",)
+    var selectedTime: String = "9:00-10:00"
     Scaffold() {
         Column (
             modifier = Modifier.fillMaxWidth(),
@@ -67,7 +83,43 @@ fun CreateNewMeetingScreen() {
                                 "сотрудник, чтобы все поняли, для чего она нужна")
                         MeetingFields("Место", "Место встречи")
                         MeetingFields("Дата", "08.02.2026")
-                        MeetingFields("Время", "18:00-19:00")
+                        //MeetingFields("Время", "18:00-19:00")
+                        Card (
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        ) {
+                            Box(
+                                modifier = Modifier
+                            ) {
+                                Button(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    onClick = { expanded = !expanded },
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = Color.Transparent,
+                                    ),
+                                ) {
+                                    Text(selectedTime, color = Color.DarkGray)
+                                    Icon(
+                                        Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "dropdown",
+                                        tint = Color.DarkGray
+                                    )
+                                }
+                                DropdownMenu(
+                                    expanded = expanded,
+                                    onDismissRequest = { expanded = false }
+                                ) {
+                                    timeConstantList.forEach { option ->
+                                        DropdownMenuItem(
+                                            text = { Text(option) },
+                                            onClick = {
+                                                selectedTime = option
+                                            }
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                        
                         Text(
                             text = "Список участников",
                             style = Typography.labelSmall,
